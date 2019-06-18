@@ -1,0 +1,13 @@
+extends ../layouts/common.pug
+
+block content
+    h1 Create New User:
+    form(action='/users/create', method='POST')
+        | Name:
+        br
+        if recentValue
+            input(type='text', name='name', value=`${recentValue}`)
+        else
+            input(type='text', name='name')
+        br
+        input(type='submit', value='Submit')

@@ -1,0 +1,14 @@
+extends ../layouts/common.pug
+
+block content
+    p Search
+    form(action='/users/search')
+        | Name:
+        br
+        input(type='text', name='name')
+        br
+        input(type='submit', value='Submit')
+
+    ul
+        each val, index in users
+            li= val.id + ': ' + val.name
